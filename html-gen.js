@@ -9,24 +9,52 @@ class HTMLgen {
         team.push(emp);
     }
     applyMD() {
-        console.log(team);
+        genMarkdown(team);
     }
     clearTeam() {
         team.length = 0;
     }
 }
 
-// makeCard(emp) {
-//     return `
-//     <h1>${emp.name}</h1>
-//     `
-// }
-// genMarkdown(team) {
-//     return // The bulk of the actual HTML doc goes here
-// }
+makeCard = team => {
+    for(let i = 0; i < team.length; i++) {
+        let emp = team[i];
+        if (emp.getRole() == 'Manager') {
+            return `Manager emp card`;
+        } else if (emp.getRole() == 'Engineer') {
+            return `Engineer emp card`;
+        } else {
+            return `Intern emp card`;
+        }
+    }
+}
 
-// testCall = () => {
-//     console.log(`The new HTML gen object has called this function!`)
-// }
+genMarkdown = team => {
+    return `<header>
 
-module.exports = HTMLgen;
+    </header>
+    <main>
+    ${makeCard(team)}
+    </main>
+
+    `
+}
+
+// Exported to test at some point
+class GenTest {
+    makeCard(team) {
+        for(let i = 0; i < team.length; i++) {
+            let emp = team[i];
+            if (emp.getRole() == 'Manager') {
+                return `Manager emp card`;
+            } else if (emp.getRole() == 'Engineer') {
+                return `Engineer emp card`;
+            } else {
+                return `Intern emp card`;
+            }
+        }
+    }
+}
+module.exports = GenTest;
+
+// module.exports = HTMLgen;
