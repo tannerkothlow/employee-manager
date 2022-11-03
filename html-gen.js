@@ -8,11 +8,11 @@ class HTMLgen {
     addMember(emp) {
         team.push(emp);
     }
-     applyMD() {
+    applyMD() {
         console.log(team);
     }
     clearTeam() {
-        // Clear the team array
+        team.length = 0;
     }
 }
 

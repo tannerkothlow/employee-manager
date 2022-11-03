@@ -1,15 +1,18 @@
-// Main Inquirer prompt
+// Imports
 const inquirer = require('inquirer');
 const HTMLgen = require('./html-gen.js');
-
 const Manager = require('./classes/Manager');
 const Engineer = require('./classes/Engineer');
 const Intern = require('./classes/Intern');
 
 const MDgen = new HTMLgen;
 
+// Main Inquirer prompt
+
 // Manager Prompt
 managerInit = () => {
+    // Due to scope of MDgen, needs a team clear function, difficulties arise when just trying to declare a new HTMLgen within the function.
+    MDgen.clearTeam();
     inquirer
         .prompt([
             {
@@ -37,7 +40,7 @@ managerInit = () => {
             addEmployee();
         })
 }
-
+// Add employee master prompt
 addEmployee = () => {
     inquirer
         .prompt([
@@ -60,7 +63,7 @@ addEmployee = () => {
             }
         })
 }
-
+// Prompt when engineer was chosen
 addEngineer = () => {
     inquirer
     .prompt([
@@ -89,7 +92,7 @@ addEngineer = () => {
         addEmployee();
     })
 }
-
+//Prompt when intern was chosen.
 addIntern = () => {
     inquirer
     .prompt([
@@ -119,5 +122,5 @@ addIntern = () => {
         })
 }
 
-
+// Starts the program
 managerInit()
