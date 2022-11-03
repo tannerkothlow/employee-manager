@@ -11,5 +11,12 @@ describe('Employee', () => {
         expect(obj.name).toEqual(name);
         expect(obj.id).toEqual(id);
         expect(obj.email).toEqual(email);
+
+        expect(obj.getName()).toEqual(name);
+    })
+    it('should return its "Employee" when role called', () => {
+        const obj = new Employee();
+
+        expect(obj.getRole()).toEqual('Employee');
     })
 })

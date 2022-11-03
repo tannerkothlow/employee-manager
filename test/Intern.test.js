@@ -13,6 +13,8 @@ describe('Intern', () => {
         expect(obj.id).toEqual(id);
         expect(obj.email).toEqual(email);
         expect(obj.school).toEqual(school);
+
+        expect(obj.getName()).toEqual(name);
     })
     it('should return "Intern" when role called', () => {
         const obj = new Intern();
