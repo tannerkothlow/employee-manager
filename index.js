@@ -1,11 +1,12 @@
 // Main Inquirer prompt
 const inquirer = require('inquirer');
-// const HtmlGen = require('./html-gen.js');
+const HTMLgen = require('./html-gen.js');
 
 const Manager = require('./classes/Manager');
 const Engineer = require('./classes/Engineer');
 const Intern = require('./classes/Intern');
 
+const MDgen = new HTMLgen;
 // Manager Prompt
 managerInit = () => {
     inquirer
@@ -54,7 +55,7 @@ addEmployee = () => {
             } else if (response.newTeammate == 'Intern') {
                 addIntern();
             } else {
-                applyMD();
+                MDgen.applyMD();
             }
         })
 }
