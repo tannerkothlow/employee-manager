@@ -5,7 +5,7 @@ const htmlGen = require('./html-gen');
 const Manager = require('./classes/Manager');
 
 // Manager Prompt
-init = () => {
+managerInit = () => {
     inquirer
         .prompt([
             {
@@ -30,6 +30,32 @@ init = () => {
             const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
             console.log(manager);
         })
+        .then(() => {
+            addEmployee();
+        })
 }
 
-init()
+addEmployee = () => {
+    inquirer
+    .prompt([
+        {
+            type: 'list',
+            choices: [`Engineer`, `Intern`, `APPLY`],
+            message: `Chose a teammate to add, or apply your choices:`,
+            name: `newTeammate`
+        }
+    ])
+    .then((response) => {
+        console.log(response.newTeammate);
+        // Check what the newTeammate equals, split Engineer and Intern into their own inquirer functions
+        if (response.newTeammate == 'Engineer') {
+            addEngineer();
+        } else if (response.newTeammate == 'Intern') {
+            addIntern();
+        } else {
+            applyTeam();
+        }
+    })
+}
+
+managerInit()
