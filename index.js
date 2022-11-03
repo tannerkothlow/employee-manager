@@ -31,8 +31,7 @@ managerInit = () => {
             const {managerName, managerId, managerEmail, managerOffice} = response;
             const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
             // Add function that passes it to html-gen.js
-        })
-        .then(() => {
+
             addEmployee();
         })
 }
@@ -79,15 +78,14 @@ addEngineer = () => {
             message: `Enter the employee's gitHub username:`,
             name: `engiGithub`
         }
-        .then ((response) => {
-            const {engiName, engiID, engiEmail, engiGithub} = response;
-            const engineer = new Engineer(engiName, engiID, engiEmail, engiGithub);
-            // Add function that passes it to html-gen.js
-        })
-        .then(() => {
-            addEmployee();
-        })
     ])
+    .then((response) => {
+        const {engiName, engiID, engiEmail, engiGithub} = response;
+        const engineer = new Engineer(engiName, engiID, engiEmail, engiGithub);
+        // Add function that passes it to html-gen.js
+
+        addEmployee();
+    })
 }
 
 addIntern = () => {
@@ -109,19 +107,18 @@ addIntern = () => {
             message: `Enter the employee's school:`,
             name: `internSchool`
         }
-        .then ((response) => {
-            const {internName, internID, internEmail, internSchool} = response;
-            const engineer = new Intern(internName, internID, internEmail, internSchool);
-            // Add function that passes it to html-gen.js
-        })
-        .then(() => {
-            addEmployee();
-        })
     ])
+    .then((response) => {
+        const {internName, internID, internEmail, internSchool} = response;
+        const engineer = new Intern(internName, internID, internEmail, internSchool);
+        // Add function that passes it to html-gen.js
+
+        addEmployee();
+        })
 }
 
 applyMD = () => {
-    
+
 }
 
 managerInit()
