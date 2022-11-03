@@ -7,6 +7,7 @@ const Engineer = require('./classes/Engineer');
 const Intern = require('./classes/Intern');
 
 const MDgen = new HTMLgen;
+
 // Manager Prompt
 managerInit = () => {
     inquirer
@@ -31,7 +32,7 @@ managerInit = () => {
         .then((response) => {
             const {managerName, managerId, managerEmail, managerOffice} = response;
             const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
-            // Add function that passes it to html-gen.js
+            MDgen.addMember(manager);
 
             addEmployee();
         })
@@ -83,7 +84,7 @@ addEngineer = () => {
     .then((response) => {
         const {engiName, engiID, engiEmail, engiGithub} = response;
         const engineer = new Engineer(engiName, engiID, engiEmail, engiGithub);
-        // Add function that passes it to html-gen.js
+        MDgen.addMember(engineer);
 
         addEmployee();
     })
@@ -111,15 +112,12 @@ addIntern = () => {
     ])
     .then((response) => {
         const {internName, internID, internEmail, internSchool} = response;
-        const engineer = new Intern(internName, internID, internEmail, internSchool);
-        // Add function that passes it to html-gen.js
+        const intern = new Intern(internName, internID, internEmail, internSchool);
+        MDgen.addMember(intern);
 
         addEmployee();
         })
 }
 
-applyMD = () => {
-
-}
 
 managerInit()

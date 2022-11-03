@@ -9,8 +9,10 @@ class HTMLgen {
         team.push(emp);
     }
      applyMD() {
-        testCall();
-        console.log(`Markdown Applied`);
+        console.log(team);
+    }
+    clearTeam() {
+        // Clear the team array
     }
 }
 
@@ -23,8 +25,8 @@ class HTMLgen {
 //     return // The bulk of the actual HTML doc goes here
 // }
 
-testCall = () => {
-    console.log(`The new HTML gen object has called this function!`)
-}
+// testCall = () => {
+//     console.log(`The new HTML gen object has called this function!`)
+// }
 
 module.exports = HTMLgen;
