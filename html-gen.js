@@ -16,3 +16,9 @@ makeCard = (emp) => {
 genMarkdown = (team) => {
    return // The bulk of the actual HTML doc goes here
 }
+
+applyMD = () => {
+    console.log(`Markdown Applied`);
+}
+
+module.exports = HtmlGen;

@@ -1,8 +1,10 @@
 // Main Inquirer prompt
 const inquirer = require('inquirer');
-const htmlGen = require('./html-gen');
+// const HtmlGen = require('./html-gen.js');
 
 const Manager = require('./classes/Manager');
+const Engineer = require('./classes/Engineer');
+const Intern = require('./classes/Intern');
 
 // Manager Prompt
 managerInit = () => {
@@ -28,7 +30,7 @@ managerInit = () => {
         .then((response) => {
             const {managerName, managerId, managerEmail, managerOffice} = response;
             const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
-            console.log(manager);
+            // Add function that passes it to html-gen.js
         })
         .then(() => {
             addEmployee();
@@ -37,25 +39,89 @@ managerInit = () => {
 
 addEmployee = () => {
     inquirer
+        .prompt([
+            {
+                type: 'list',
+                choices: [`Engineer`, `Intern`, `APPLY`],
+                message: `Chose a teammate to add, or apply your choices:`,
+                name: `newTeammate`
+            }
+        ])
+        .then((response) => {
+            console.log(response.newTeammate);
+            // Check what the newTeammate equals, split Engineer and Intern into their own inquirer functions
+            if (response.newTeammate == 'Engineer') {
+                addEngineer();
+            } else if (response.newTeammate == 'Intern') {
+                addIntern();
+            } else {
+                applyMD();
+            }
+        })
+}
+
+addEngineer = () => {
+    inquirer
     .prompt([
         {
-            type: 'list',
-            choices: [`Engineer`, `Intern`, `APPLY`],
-            message: `Chose a teammate to add, or apply your choices:`,
-            name: `newTeammate`
+            message: `Enter the employee's name:`,
+            name: `engiName`
+        },
+        {
+            message: `Enter the employee's ID:`,
+            name: `engiID`
+        },
+        {
+            message: `Enter the employee's email address:`,
+            name: `engiEmail`
+        },
+        {
+            message: `Enter the employee's gitHub username:`,
+            name: `engiGithub`
         }
+        .then ((response) => {
+            const {engiName, engiID, engiEmail, engiGithub} = response;
+            const engineer = new Engineer(engiName, engiID, engiEmail, engiGithub);
+            // Add function that passes it to html-gen.js
+        })
+        .then(() => {
+            addEmployee();
+        })
     ])
-    .then((response) => {
-        console.log(response.newTeammate);
-        // Check what the newTeammate equals, split Engineer and Intern into their own inquirer functions
-        if (response.newTeammate == 'Engineer') {
-            addEngineer();
-        } else if (response.newTeammate == 'Intern') {
-            addIntern();
-        } else {
-            applyTeam();
+}
+
+addIntern = () => {
+    inquirer
+    .prompt([
+        {
+            message: `Enter the employee's name:`,
+            name: `internName`
+        },
+        {
+            message: `Enter the employee's ID:`,
+            name: `internID`
+        },
+        {
+            message: `Enter the employee's email address:`,
+            name: `internEmail`
+        },
+        {
+            message: `Enter the employee's school:`,
+            name: `internSchool`
         }
-    })
+        .then ((response) => {
+            const {internName, internID, internEmail, internSchool} = response;
+            const engineer = new Intern(internName, internID, internEmail, internSchool);
+            // Add function that passes it to html-gen.js
+        })
+        .then(() => {
+            addEmployee();
+        })
+    ])
+}
+
+applyMD = () => {
+    
 }
 
 managerInit()
