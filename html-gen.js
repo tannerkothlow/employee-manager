@@ -10,7 +10,11 @@ class HTMLgen {
         team.push(emp);
     }
     applyMD() {
-        genMarkdown(team);
+        fs.writeFile('./output/team.html', genMarkdown(team), err => {
+            if (err) {
+                console.error(err);
+            }
+        });
     }
     clearTeam() {
         team.length = 0;
