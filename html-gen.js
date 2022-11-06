@@ -70,9 +70,7 @@ makeCard = team => {
 }
 
 genMarkdown = team => {
-    return `
-
-    <!DOCTYPE html>
+    return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -82,8 +80,10 @@ genMarkdown = team => {
     </head>
     <body>
     <header><h1>Employee Manager</h1></header>
+    <div class="card-box">
     <div class="card-holder">
     ${makeCard(team)}
+    </div>
     </div>
     </body>
     </html>
