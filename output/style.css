@@ -1,0 +1,81 @@
+
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(55, 55, 61);
+}
+
+header {
+    background-color: rgb(71, 71, 211);
+    text-align: center;
+    padding: 30px;
+    color: rgb(219, 219, 219);
+}
+
+.card-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 80vh; */
+    margin: auto;
+    margin-top: 32px;
+}
+
+.card-holder {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+}
+
+.emp-card {
+    background-color: rgb(219, 219, 219);
+    width: 28%;
+    margin: 4% 2%;
+    height: 300px;
+    border-radius: 4px;
+    box-shadow: 7px 7px 2px black;
+    color: rgb(55, 55, 61);
+}
+
+.emp-card h1 {
+    background-color: rgb(71, 71, 211);
+    color: rgb(219, 219, 219);
+    padding: 2% 5%;
+    font-size: 25px;
+    /* border-bottom: 8px solid rgb(55, 55, 61); */
+}
+
+.emp-card h2 {
+    padding: 2% 5%;
+    font-size: 20px;
+}
+
+.emp-card ul {
+    margin: 0px 10px;
+    border: 2px solid rgb(100, 100, 112);
+    list-style: none;
+    border-radius: 5px;
+    /* box-shadow: inset 0 0 5px rgb(121, 120, 120); */
+}
+
+.emp-card li {
+    border: 1px solid rgb(100, 100, 112);
+    border-left: 0px;
+    border-right: 0px;
+    padding: 4% 5%;
+    font-size: 14px;
+}
+
+.emp-card li:first-child {
+    border-top: 0px;
+}
+
+.emp-card li:last-child {
+    border-bottom: 0px;
+}
