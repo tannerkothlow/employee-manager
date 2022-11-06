@@ -33,7 +33,7 @@ makeCard = team => {
             <h2>Manager</h2>
             <ul>
             <li>ID: ${emp.id} </li>
-            <li>Email: <a href="">${emp.email}</a> </li>
+            <li>Email: <a href="mailto: ${emp.email}">${emp.email}</a> </li>
             <li>Office ${emp.officeNumber} </li>
             </ul>
             </div>
@@ -46,7 +46,7 @@ makeCard = team => {
             <h2>Engineer</h2>
             <ul>
             <li>ID: ${emp.id} </li>
-            <li>Email: <a href="">${emp.email}</a> </li>
+            <li>Email: <a href="mailto: ${emp.email}">${emp.email}</a> </li>
             <li>GitHub: <a href="https://github.com/${emp.github}">${emp.github}</a> </li>
             </ul>
             </div>
@@ -59,7 +59,7 @@ makeCard = team => {
             <h2>Intern</h2>
             <ul>
             <li>ID: ${emp.id} </li>
-            <li>Email: <a href="">${emp.email}</a> </li>
+            <li>Email: <a href="mailto: ${emp.email}">${emp.email}</a> </li>
             <li>School: ${emp.school} </li>
             </ul>
             </div>
