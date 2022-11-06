@@ -12,7 +12,7 @@ header {
     background-color: rgb(71, 71, 211);
     text-align: center;
     padding: 30px;
-    color: wheat;
+    color: rgb(219, 219, 219)
 }
 
 .card-box {
@@ -21,16 +21,26 @@ header {
     justify-content: center;
     height: 80vh;
     margin: auto;
+    margin-top: 30px;
 }
 
 .card-holder {
     display: flex;
+    flex-wrap: wrap;
     width: 70%;
+    justify-content: center;
 }
 
 .emp-card {
     background-color: wheat;
-    width: 30%;
+    width: 28%;
     margin: 4% 2%;
     height: 300px;
+}
+
+.emp-card h1 {
+    background-color: rgb(71, 71, 211);
+    color: rgb(219, 219, 219);
+    padding: 2% 5%;
+    font-size: 25px;
 }
