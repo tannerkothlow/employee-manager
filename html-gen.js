@@ -22,12 +22,13 @@ class HTMLgen {
 }
 
 makeCard = team => {
+    let cards = '';
     for(let i = 0; i < team.length; i++) {
         let emp = team[i];
         if (emp.getRole() == 'Manager') {
             // return `Manager emp card`;
-            return `
-            <div>
+            cards += `
+            <div class="emp-card">
             <h1>${emp.name}</h1>
             <h2>Manager</h2>
             <ul>
@@ -39,8 +40,8 @@ makeCard = team => {
             `;
         } else if (emp.getRole() == 'Engineer') {
             // return `Engineer emp card`;
-            return `
-            <div>
+            cards += `
+            <div class="emp-card">
             <h1>${emp.name}</h1>
             <h2>Engineer</h2>
             <ul>
@@ -52,8 +53,8 @@ makeCard = team => {
             `;
         } else {
             // return `Intern emp card`;
-            return `
-            <div>
+            cards += `
+            <div class="emp-card">
             <h1>${emp.name}</h1>
             <h2>Intern</h2>
             <ul>
@@ -65,6 +66,7 @@ makeCard = team => {
             `;
         }
     }
+    return cards;
 }
 
 genMarkdown = team => {
