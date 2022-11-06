@@ -23,6 +23,7 @@ makeCard = team => {
         if (emp.getRole() == 'Manager') {
             // return `Manager emp card`;
             return `
+            <div>
             <h1>${emp.name}</h1>
             <h2>Manager</h2>
             <ul>
@@ -30,10 +31,12 @@ makeCard = team => {
             <li>Email: ${emp.email} </li>
             <li>Office ${emp.officeNumber} </li>
             </ul>
+            </div>
             `;
         } else if (emp.getRole() == 'Engineer') {
             // return `Engineer emp card`;
             return `
+            <div>
             <h1>${emp.name}</h1>
             <h2>Engineer</h2>
             <ul>
@@ -41,10 +44,12 @@ makeCard = team => {
             <li>Email: ${emp.email} </li>
             <li>GitHub: ${emp.github} </li>
             </ul>
+            </div>
             `;
         } else {
             // return `Intern emp card`;
             return `
+            <div>
             <h1>${emp.name}</h1>
             <h2>Intern</h2>
             <ul>
@@ -52,18 +57,30 @@ makeCard = team => {
             <li>Email: ${emp.email} </li>
             <li>School: ${emp.school} </li>
             </ul>
+            </div>
             `;
         }
     }
 }
 
 genMarkdown = team => {
-    return `<header>
+    return `
 
-    </header>
-    <main>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emp Gen</title>
+    </head>
+    <body>
+    <header><h1>Employee Manager</h1></header>
+    <div class="card-holder">
     ${makeCard(team)}
-    </main>
+    </div>
+    </body>
+    </html>
 
     `
 }
