@@ -1,0 +1,27 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(55, 55, 61);
+}
+
+header {
+    background-color: rgb(71, 71, 211);
+    text-align: center;
+    padding: 30px;
+    color: wheat;
+}
+
+.card-holder {
+    display: flex;
+    width: 60%;
+}
+
+.emp-card {
+    background-color: wheat;
+    width: 30%;
+    margin: 1.5%;
+}
