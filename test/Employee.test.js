@@ -1,7 +1,7 @@
 const Employee = require('../classes/Employee');
 
 describe('Employee', () => {
-    it('should create an employee object with a name, id, and email property', () => {
+    xit('should create an employee object with a name, id, and email property', () => {
         const name = 'Greg';
         const id = 1;
         const email = 'greg@greg.com'
@@ -14,7 +14,7 @@ describe('Employee', () => {
 
         expect(obj.getName()).toEqual(name);
     })
-    it('should return its "Employee" when role called', () => {
+    xit('should return its "Employee" when role called', () => {
         const obj = new Employee();
 
         expect(obj.getRole()).toEqual('Employee');

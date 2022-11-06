@@ -1,7 +1,7 @@
 const Manager = require('../classes/Manager');
 
 describe('Manager', () => {
-    it('should create a Manager object with a name, id, email, and office number property', () => {
+    xit('should create a Manager object with a name, id, email, and office number property', () => {
         const name = 'Gregager';
         const id = 100;
         const email = 'greg@greg.gov'
@@ -16,7 +16,7 @@ describe('Manager', () => {
 
         expect(obj.getName()).toEqual(name);
     })
-    it('should return "Manager" when role called', () => {
+    xit('should return "Manager" when role called', () => {
         const obj = new Manager();
 
         expect(obj.getRole()).toEqual('Manager');

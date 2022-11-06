@@ -1,13 +1,18 @@
-// Main Inquirer prompt
+// Imports
 const inquirer = require('inquirer');
-// const HtmlGen = require('./html-gen.js');
-
+const HTMLgen = require('./html-gen.js');
 const Manager = require('./classes/Manager');
 const Engineer = require('./classes/Engineer');
 const Intern = require('./classes/Intern');
 
+const MDgen = new HTMLgen;
+
+// Main Inquirer prompt
+
 // Manager Prompt
 managerInit = () => {
+    // Due to scope of MDgen, needs a team clear function, difficulties arise when just trying to declare a new HTMLgen within the function.
+    MDgen.clearTeam();
     inquirer
         .prompt([
             {
@@ -30,12 +35,12 @@ managerInit = () => {
         .then((response) => {
             const {managerName, managerId, managerEmail, managerOffice} = response;
             const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
-            // Add function that passes it to html-gen.js
+            MDgen.addMember(manager);
 
             addEmployee();
         })
 }
-
+// Add employee master prompt
 addEmployee = () => {
     inquirer
         .prompt([
@@ -54,11 +59,11 @@ addEmployee = () => {
             } else if (response.newTeammate == 'Intern') {
                 addIntern();
             } else {
-                applyMD();
+                MDgen.applyMD();
             }
         })
 }
-
+// Prompt when engineer was chosen
 addEngineer = () => {
     inquirer
     .prompt([
@@ -82,12 +87,12 @@ addEngineer = () => {
     .then((response) => {
         const {engiName, engiID, engiEmail, engiGithub} = response;
         const engineer = new Engineer(engiName, engiID, engiEmail, engiGithub);
-        // Add function that passes it to html-gen.js
+        MDgen.addMember(engineer);
 
         addEmployee();
     })
 }
-
+//Prompt when intern was chosen.
 addIntern = () => {
     inquirer
     .prompt([
@@ -110,15 +115,12 @@ addIntern = () => {
     ])
     .then((response) => {
         const {internName, internID, internEmail, internSchool} = response;
-        const engineer = new Intern(internName, internID, internEmail, internSchool);
-        // Add function that passes it to html-gen.js
+        const intern = new Intern(internName, internID, internEmail, internSchool);
+        MDgen.addMember(intern);
 
         addEmployee();
         })
 }
 
-applyMD = () => {
-
-}
-
+// Starts the program
 managerInit()
