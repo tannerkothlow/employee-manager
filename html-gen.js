@@ -1,10 +1,10 @@
-// This will be what the Inquirer data is passed into and assembled.
-const fs = require('fs');
+// This JS handles the data provided by the Inquirer prompts
 
-// Each card object will be built on a boilerplate object that will be extended depending on the criteria entered.
+const fs = require('fs');
 
 const team = [];
 
+// Exports just the functions needed in index.js.
 class HTMLgen {
     addMember(emp) {
         team.push(emp);
@@ -21,6 +21,7 @@ class HTMLgen {
     }
 }
 
+// Generates a card object for each team member in the team array.
 makeCard = team => {
     let cards = '';
     for(let i = 0; i < team.length; i++) {
@@ -69,6 +70,7 @@ makeCard = team => {
     return cards;
 }
 
+// Returns an HTML doc as a string, which is written in the applyMD() function.
 genMarkdown = team => {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -92,7 +94,8 @@ genMarkdown = team => {
     `
 }
 
-// Exported to test at some point
+// Exported makeCard() to test
+
 // class GenTest {
 //     makeCard(team) {
 //         for(let i = 0; i < team.length; i++) {

@@ -9,7 +9,7 @@ const MDgen = new HTMLgen;
 
 // Main Inquirer prompt
 
-// Manager Prompt
+// Manager prompt as well as the initializer
 managerInit = () => {
     // Due to scope of MDgen, needs a team clear function, difficulties arise when just trying to declare a new HTMLgen within the function.
     MDgen.clearTeam();
@@ -40,7 +40,8 @@ managerInit = () => {
             addEmployee();
         })
 }
-// Add employee master prompt
+
+// Add employee prompt, calls addEngineer or addIntern depending on user choice
 addEmployee = () => {
     inquirer
         .prompt([
@@ -63,6 +64,7 @@ addEmployee = () => {
             }
         })
 }
+
 // Prompt when engineer was chosen
 addEngineer = () => {
     inquirer
@@ -92,6 +94,7 @@ addEngineer = () => {
         addEmployee();
     })
 }
+
 //Prompt when intern was chosen.
 addIntern = () => {
     inquirer
