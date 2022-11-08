@@ -12,27 +12,27 @@ To run the program, open index.js in an integrated terminal and run **node index
 
 ## Usage
 
--
+- After starting the program, you will be presented with an initial prompt to fill out a team manager's information.
 
 ![init prompt](./assets/images/manager_prompt.PNG)
 
--
+- After submitting all that team member's information, you will have the option to add an Engineer, Intern, or to APPLY your current team.
 
 ![engineer prompt](./assets/images/engineer_prompt.PNG)
 
--
-
 ![intern prompt](./assets/images/intern_prompt.PNG)
 
--
+- Once you have entered all the team members you want, apply the current team.
+
+- This will generate an HTML document in the **output** folder.
+
+- The **output** folder comes with a stylesheet that will be applied to the generated HTML.
 
 ![output](./assets/images/html_location.PNG)
 
--
+- Previewing the document will display the team you entered, with each member having their own card.
 
 ![output](./assets/images/generated_html.PNG)
-
--
 
 ## Testing
 
