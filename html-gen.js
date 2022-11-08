@@ -80,7 +80,7 @@ genMarkdown = team => {
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-    <header><h1>Employee Manager</h1></header>
+    <header><h1>Our Team</h1></header>
     <div class="card-box">
     <div class="card-holder">
     ${makeCard(team)}
