@@ -40,9 +40,11 @@ To run the program, open index.js in an integrated terminal and run **node index
 
 ![output](./assets/images/generated_html.PNG)
 
+- To see a video demonstrating this project, [click here](https://drive.google.com/file/d/1_Nrc0hl-n8Lhz8_EKglxB7f0xJ8kT8dv/view?usp=sharing)
+
 ## Testing
 
-To run tests after having installed Jest, enter **npm run test** in the terminal.
+To run tests after having installed Jest, enter **npm run test** in the terminal. To run a test, make sure to remove the "x" from the beginning of the "it" prompts in each respective test file.
 
 NOTE: To run tests for html-gen.js, comment out the current makeCard function and the currently exported class. Then uncomment the test class at the bottom of the document.
 
